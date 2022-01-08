@@ -1,0 +1,136 @@
+<header class = "header bg-warning">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img width="80px" height="120px"src="<%- imgSource %>" alt = ".."> 
+      </a>
+      <a class="navbar-brand me-auto" href="/">
+        <b><%= title %></b>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'home' ? 'active' : '') %>" aria-current="page" href="/"><b>Home</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'books' ? 'active' : '') %>" href="/books"><b>Books</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'categories' ? 'active' : '') %>" href="/categories"><b>Categories</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'authors' ? 'active' : '') %>" href="/authors"><b>Authors</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'about' ? 'active' : '') %>" href="/about"><b>About Us</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link" href="/login"><b>Log Out</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+    </div>
+</nav>
+  
+<section class="container">
+  <div class="row mt-4">
+    <h1><span class = "text-warning">Project</span></h1>
+  </div>
+</section>
+
+<div class="container bg-dark text-light mb-4" style="text-align: justify;">
+  <div class ="row">
+    <p>
+      Our project is a 
+      <b class="text-warning">Book Directory System</b>. We chose this project as it contains methods like 
+      <i class="text-warning">get</i> and 
+      <i class="text-warning">post</i> that are very essential to understand when working in 
+      <b class="text-warning">node js with express framework</b>.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      There are a few pages that this website contains:     
+    </p>
+    <p>
+      <i class="text-warning">(1) login page:</i> it is used to access all the other pages within the website if you are registered.
+    </p>
+    <p>
+      <i class="text-warning">(2) registration page:</i> it is used to register yourself as to login so you can use the other pages in the website.
+    </p>
+    <p>
+      <i class="text-warning">(3) home page:</i> it is the main page of our project.
+    </p>
+    <p>
+      <i class="text-warning">(4) book listing page:</i> contains all the name of the books present in the database.
+    </p>
+    <p>
+      <i class="text-warning">(5) category listing page:</i> contains all the different categories under which the books are distributed.
+    </p>
+    <p>
+      <i class="text-warning">(6) author listing page:</i> contains the name of all the authors who wrote or contributed in various books.
+    </p>
+    <p>
+      <i class="text-warning">(7) about page:</i> contains the information about the project. 
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      This project keeps all the details of a book, its 
+      <i class="text-warning">publishing date</i>, 
+      <i class="text-warning">short description</i>, 
+      <i class="text-warning">long description</i>, 
+      <i class="text-warning">categories</i> under which the book is, and the <i class="text-warning">author</i> names who wrote or contributed for that particular book.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      We have created this project in 
+      <b class="text-warning">node js with express framework</b> and <b class="text-warning">postgresql</b> for the <i class="text-warning">database</i>, we also used 
+      <b class="text-warning">ejs layouts</b> to 
+      <i class="text-warning">render the information</i> on the website, 
+      <b class="text-warning">multer</b> to get the 
+      <i class="text-warning">data through the post</i> function and 
+      <b class="text-warning">node-sessionstorage</b> to 
+      <i class="text-warning">handle the login or logout feature</i>.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      We faced some challenges during the project while implementing the 
+      <i class="text-warning">search bar</i> and as well as for the 
+      <i class="text-warning">login page</i>, but after researching a little bit, we were able to figure out the problem and along the process we learnt many things.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      Our team consists of 
+      <b class="text-warning">five people</b>, 
+      <i class="text-warning">Arideep Nandi</i>, 
+      <i class="text-warning">Bikram Sarkar</i>, 
+      <i class="text-wanring">Fatema Shakir</i>, 
+      <i class="text-warning">Kislay Kumar</i>, and 
+      <i class="text-warning">Malovika Sinha</i>, we all are the students of 
+      <b class="text-warning">Brainware University</b> and 
+      <i class="text-warning">pursuing BTech CSE</i>.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      As you can see, this project is based on the 
+      <b class="text-warning">users point of view</b>, to know the 
+      <i class="text-warning">details about a particular book</i>, but we can add an 
+      <b class="text-warning">admins point of view</b>, as to <i class="text-warning">add, update or delete a book by using put or delete function</i>.
+    </p>
+  </div>
+</div>  
+  

@@ -1,0 +1,78 @@
+<header class = "header bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img width="80px" height="120px"src="<%- imgSource %>" alt = ".."> 
+        </a>
+        <a class="navbar-brand me-auto" href="/">
+          <b><%= title %></b>
+        </a>
+      </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4 my-4 bg-dark">
+            <h3 class="mt-2"><span class="text-warning">Register</h3>
+            
+            <div class="mt-3 text-light">
+                <p class="text-warning">
+                    Welcome to the Book Attic!!
+                </p>
+                <p class="text-warning" style="text-align: justify;">
+                    We provide a brief detail about the books related to technology, we are glad to have you here. Please register yourself in order to access the book details. 
+                </p>
+
+                <form action="/register" method = "POST">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">User Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="userName" placeholder="Your Name" name="user_name" value="<%= typeof formSubmissionData !== 'undefined' ? formSubmissionData.user_name : ''%>">
+                        <% if(typeof formSubmissionStatus !== 'undefined' && formSubmissionStatus.status == 1 && formSubmissionStatus.field == 1){ %>
+                            <small class="text-warning"><%= formSubmissionStatus.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">User Email <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="userEmail" placeholder="Your Email" name="user_email" value="<%= typeof formSubmissionData !== 'undefined' ? formSubmissionData.user_email : ''%>">
+                        <% if(typeof formSubmissionStatus !== 'undefined' && formSubmissionStatus.status == 1 && formSubmissionStatus.field == 2){ %>
+                            <small class="text-warning"><%= formSubmissionStatus.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPass" class="form-label">Password <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="userPass" placeholder="Your Password" name="user_pass">
+                        <% if(typeof formSubmissionStatus !== 'undefined' && formSubmissionStatus.status == 1 && formSubmissionStatus.field == 3){ %>
+                        <small class="text-warning"><%= formSubmissionStatus.msg %></small>
+                        <% } %>
+                    </div>
+                    <div>
+                        <button class="btn w-100 btn-outline-warning mb-3" type="submit">
+                            Register
+                        </button>
+                    </div>
+                </form>
+
+                <% if(typeof error != 'undefined' && error == 23505){ %>
+                    <b>
+                        <p style="text-align: center;">
+                            User already registered!!!
+                        </p>
+                    </b>
+                <%}%>
+
+                <p class="text-warning">
+                    If you are already a user, kindly login.
+                </p>
+                <div class="mb-3" style="text-align: center;">
+                    <a href="/login" class="btn btn-warning text-light">Login</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>

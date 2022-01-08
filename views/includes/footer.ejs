@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <p>
+                    <strong class="text-warning">Contact Us</strong>
+                </p>
+                <% for(let i=0;;++i){ %>
+                <% if(i != 5){ %>
+                    <div class="row">
+                        <p>
+                            <strong class="text-light"><%= names[i] %>: </strong><a class="text-warning"><%= emails[i] %></a>
+                        </p>
+                    </div>
+                <% } else{ break; } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<footer class = "bg-warning text-white p-3">
+    <p class="m-0 text-center"><%- copyrightText %></p>
+</footer>

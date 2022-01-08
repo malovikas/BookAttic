@@ -1,0 +1,83 @@
+<header class = "header bg-warning">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img width="80px" height="120px"src="<%- imgSource %>" alt = "..">
+      </a>
+      <a class="navbar-brand me-auto" href="/">
+        <b><%= title %></b>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'home' ? 'active' : '') %>" aria-current="page" href="/"><b>Home</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'books' ? 'active' : '') %>" href="/books"><b>Books</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'categories' ? 'active' : '') %>" href="/categories"><b>Categories</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'authors' ? 'active' : '') %>" href="/authors"><b>Authors</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link <%= (pageSlug == 'about' ? 'active' : '') %>" href="/about"><b>About Us</b></a>
+          </li>
+          <li class="nav-item ms-auto">
+            <a class="nav-link" href="/login"><b>Log Out</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="navbar navbar-light bg-dark">
+  <div class="container">
+  </div>
+</nav>
+
+<section class = "popular-prod my-3">
+  <h1 class = "container"><span class="text-warning">Popular</span> Books</h1>
+
+  <div class="container bg-dark">
+    <div class="row">
+      <% let count = 0; %>
+      <% for(let book of books){ %>
+      <% let len = book.title.split(' ').length; %>
+      <% let words_in_title = book.title.split(' '); %>
+      <% if(len == 2 && count < 8){ %>
+      <div class="col-md-3 col-sm-6 mt-3 mb-2">
+        <div class="card" style="text-align:center;">
+          <img src="<%= book.thumbnailurl %>" class="card-img-top img-thumbnail" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><span class="text-warning"><%= words_in_title[0] %> </span><% for(let i=1;i<len;++i){ %><%= words_in_title[i] %> <% } %></h5>
+            <a href="/books/<%= book.isbn %>" class="btn btn-warning text-light">View Details</a>
+          </div>
+        </div>
+      </div>
+      <% ++count; } %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div> -->
